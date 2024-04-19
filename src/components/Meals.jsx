@@ -1,16 +1,12 @@
-import {useContext} from 'react';
-import AppContext from '../context/context';
+import {useGlobalContext} from '../context/context'
 
 const Meals = () =>{
 
-  const {showModal} = useContext(AppContext);
+  const {showModel, hi} = useGlobalContext();
   
   return (
     <div>
-      Meals
-      {
-        console.log({showModal})
-      }
+      <h1>Meals: {showModel} and {hi}</h1>
     </div>
   )
 }
