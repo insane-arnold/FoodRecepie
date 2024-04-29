@@ -3,7 +3,23 @@ import { LuThumbsUp } from "react-icons/lu";
 
 const Meals = () =>{
 
-  const {meals} = useGlobalContext();
+  const {loading, meals} = useGlobalContext();
+
+  if(loading){
+    return(
+      <section>
+        <h1>Loading ....</h1>
+      </section>
+    )
+  }
+
+  if(meals == null){
+    return(
+      <section>
+        <h1>No meals matched your search term. Please try again.</h1>
+      </section>
+    )
+  }
   
   return (
     <section className="section-center">
