@@ -7,7 +7,7 @@ const Meals = () =>{
 
   if(loading){
     return(
-      <section>
+      <section className='notify'>
         <h1>Loading ....</h1>
       </section>
     )
@@ -15,7 +15,7 @@ const Meals = () =>{
 
   if(meals == null){
     return(
-      <section>
+      <section className='notify'>
         <h1>No meals matched your search term. Please try again.</h1>
       </section>
     )

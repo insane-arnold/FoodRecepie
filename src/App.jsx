@@ -8,9 +8,9 @@ import {AppProvider} from './context/context'
 export default function App() {
   return (
     <AppProvider>
-      <Favourite />
+      {/* <Favourite /> */}
       <Search />
-      <Model />
+      {/* <Model /> */}
       <Meals />
     </AppProvider>
   )
