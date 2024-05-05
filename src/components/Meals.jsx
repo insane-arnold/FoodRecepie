@@ -3,7 +3,7 @@ import { LuThumbsUp } from "react-icons/lu";
 
 const Meals = () =>{
 
-  const {loading, meals} = useGlobalContext();
+  const {loading, meals, selectMeal} = useGlobalContext();
 
   if(loading){
     return(
@@ -27,7 +27,7 @@ const Meals = () =>{
         const { idMeal, strMeal: title, strMealThumb: image } = meal;
         return (
           <article key={idMeal} className="single-meal">
-            <img src={image} alt={title} className="img" />
+            <img src={image} alt={title} className="img" onClick={()=>selectMeal(idMeal)} />
             <footer>
               <h2>{title}</h2>
               <button className="like-button"><LuThumbsUp /></button>

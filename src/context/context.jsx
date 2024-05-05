@@ -8,6 +8,8 @@ export const AppProvider = ({ children }) => {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showModel, setShowModel] = useState(false);
+  const [selectedMeal, setSelectedMeal] = useState(null);
   const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
@@ -25,13 +27,27 @@ export const AppProvider = ({ children }) => {
   const fetchRandomMeal = ()=>{
     fetchMeals(randomMealUrl)
   }
+
+  const selectMeal = (idMeal, favouriteMeal)=>{
+    let meal;
+    meal = meals.find((meal)=> meal.idMeal === idMeal);
+    setSelectedMeal(meal);
+    setShowModel(true);
+  }
+
+  const closeModel = ()=>{
+    setShowModel(false);
+  }
   
   useEffect(()=>{
       fetchMeals(`${allMealsUrl}${searchTerm}`);
   },[searchTerm])
   
   return (
-    <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal}}>{children}</AppContext.Provider>
+    <AppContext.Provider 
+      value={{loading, meals, setSearchTerm, fetchRandomMeal,
+             showModel, selectedMeal, selectMeal, closeModel }}>{children}
+    </AppContext.Provider>
   );
 };
 

@@ -121,3 +121,37 @@ body{
   margin: 20rem 0;
   text-align: center;
 }
+
+
+/* Model Component */
+
+.model-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.model-container{
+  width: 80vw;
+  max-width: 800px;
+  height: 80vh;
+  overflow: scroll;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.model-img{
+  height: 15rem;
+}
+
+
+.model-content{
+  align-content:center;
+}
