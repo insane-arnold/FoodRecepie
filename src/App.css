@@ -155,3 +155,34 @@ body{
 .model-content{
   align-content:center;
 }
+
+
+/* Favourites Component */
+
+.favourites{
+  background: #000;
+  color: #fff;
+  padding: 1rem 1rem;
+}
+
+.favourites-content{
+  width: 95%;
+  max-width: 200px;
+}
+
+.favourites-container{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.favourite-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.favourite-img{
+  width: 60px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  cursor: pointer;
+}
